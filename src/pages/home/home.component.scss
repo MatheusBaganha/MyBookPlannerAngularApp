@@ -1,0 +1,15 @@
+.aboutUs {
+    margin: 148px 64px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 128px;
+    flex-wrap: wrap;
+
+    .containerImg {
+        max-width: 450px;
+    }
+}
