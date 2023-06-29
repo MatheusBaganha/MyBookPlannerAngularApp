@@ -9,6 +9,7 @@ import { PageTitleComponent } from 'src/components/page-title/page-title.compone
 import { SubtitleComponent } from 'src/components/subtitle/subtitle.component';
 import { ButtonComponent } from 'src/components/button/button.component';
 import { ParagraphComponent } from 'src/components/paragraph/paragraph.component';
+import { FooterComponent } from '../components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ParagraphComponent } from 'src/components/paragraph/paragraph.component
     PageTitleComponent,
     SubtitleComponent,
     ButtonComponent,
-    ParagraphComponent
+    ParagraphComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
