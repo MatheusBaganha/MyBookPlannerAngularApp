@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { HomeComponent } from 'src/pages/home/home.component';
@@ -10,6 +10,9 @@ import { SubtitleComponent } from 'src/components/subtitle/subtitle.component';
 import { ButtonComponent } from 'src/components/button/button.component';
 import { ParagraphComponent } from 'src/components/paragraph/paragraph.component';
 import { FooterComponent } from '../components/footer/footer.component';
+import { LoginComponent } from '../pages/login/login.component';
+import { CatalogoComponent } from '../pages/catalogo/catalogo.component';
+import { MeusLivrosComponent } from '../pages/meus-livros/meus-livros.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { FooterComponent } from '../components/footer/footer.component';
     SubtitleComponent,
     ButtonComponent,
     ParagraphComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    CatalogoComponent,
+    MeusLivrosComponent
   ],
   imports: [
     BrowserModule,
