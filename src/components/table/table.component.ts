@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IBook } from 'src/interfaces';
 
 @Component({
   selector: 'app-table',
@@ -6,6 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent {
-  @Input() books: any[] = []
+  @Input() books! : IBook;
 
 }

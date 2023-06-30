@@ -16,7 +16,7 @@
 }
 
 .tableRow, .tableData {
-    height: 114px;
+    max-height: 114px;
     padding: 6px;
     font-weight: 600;
     border-bottom: 1px solid #191919;
@@ -37,7 +37,7 @@
 
 .tableDataImage {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: start;
     text-align: start;
     gap: 0 28px;
