@@ -1,0 +1,81 @@
+.tableContainer {
+    max-width: 1200px;
+    border: 1px solid #191919;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 68px;
+}
+
+.tableHead {
+    background-color: #1D1B1B;
+    border-bottom: 1px solid #191919;
+    height: 64px;
+    padding: 6px 12px;
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+
+.tableRow, .tableData {
+    height: 114px;
+    padding: 6px;
+    font-weight: 600;
+    border-bottom: 1px solid #191919;
+    color: #8F8F8F
+}
+
+.tableRow:nth-child(even) {
+    background-color: #212020;
+}
+  
+.tableRow:nth-child(even) {
+    background-color: #1E1C1C;
+}
+
+.tableRow td {
+    border-right: 1px solid #191919;
+}
+
+.tableDataImage {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    text-align: start;
+    gap: 0 28px;
+   
+    .containerImg {
+        max-width: 73.81px;
+    }
+
+    .containerBookInfo {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.7rem;
+       
+
+        .livro {
+            padding-right: 36px;
+            padding-top: 16px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.nota, .rank {
+    font-size: 3.25rem;
+}
+
+.editBtn {
+    background-color: #272727;
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: none;
+    width: 119px;
+    padding: 9px 34px;
+    cursor: pointer;
+    margin: 0 18px;
+
+    &:hover {
+        background-color: #414141;
+    }
+}
