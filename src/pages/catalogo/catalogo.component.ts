@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { BooksService } from 'src/services/books.service';
+import { BooksService } from 'src/services/books/books.service';
 
 import { IBook } from 'src/interfaces';
 import { HttpErrorResponse } from '@angular/common/http';

@@ -2,23 +2,23 @@
     <app-page-title *ngIf="isLogin == false">Crie sua conta.</app-page-title>
     <app-page-title *ngIf="isLogin == true">Entre em sua conta.</app-page-title>
     <div class="formContainer">
-        <form action="#" class="form">
+        <form class="form">
             <label *ngIf="isLogin == false" for="username">Nome: </label>
-            <input *ngIf="isLogin == false" type="text" id="username" required>
+            <input *ngIf="isLogin == false" type="text" [(ngModel)]="username" id="username" name="username" required>
 
             <label for="email">Email: </label>
-            <input type="email" id="email" required>
+            <input type="email" [(ngModel)]="email" id="email" name="email" required>
 
             <label for="password">Senha: </label>
-            <input type="password" id="password" required>
+            <input type="password" [(ngModel)]="password" id="password" name="email" required>
 
             <div class="btnContainer">
-
-                <app-button *ngIf="isLogin == false">CADASTRAR</app-button>
-                <app-button *ngIf="isLogin == true">ENTRAR</app-button>
+                <app-button *ngIf="isLogin == false" (onClick)="handleSignUp()">CADASTRAR</app-button>
+                <app-button *ngIf="isLogin == true" (onClick)="handleLogin()">ENTRAR</app-button>
                 <span class="changeLogin" *ngIf="isLogin == false" (click)="handleChangeLogin()">Já tenho uma conta.</span>
                 <span class="changeLogin" *ngIf="isLogin == true" (click)="handleChangeLogin()">Não tenho uma conta.</span>
             </div>
+            <span *ngIf="error !== ''" class="errorMsg">{{error}}</span>
         </form>
 
         <div class="imageContainer">

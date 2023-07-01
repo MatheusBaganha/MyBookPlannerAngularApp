@@ -10,6 +10,7 @@
     align-items: center;
     gap: 0 122px;
     margin-top: 76px;
+    margin-bottom: 128px;
 
     .imageContainer {
         max-width: 585px;
@@ -24,7 +25,7 @@
     background-color: #1E1C1C;
     border-radius: 5px;
     padding: 38px 35px;
-    width: 577;
+    width: 587px;
     box-sizing: border-box;
 
     label {
@@ -74,4 +75,10 @@
     }
 }
 
+.errorMsg {
+    margin: 12px auto;
+    color: #ff6666;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
 
