@@ -15,6 +15,7 @@ import { LoginComponent } from '../pages/login/login.component';
 import { CatalogoComponent } from '../pages/catalogo/catalogo.component';
 import { MeusLivrosComponent } from '../pages/meus-livros/meus-livros.component';
 import { TableComponent } from '../components/table/table.component';
+import { ButtonEditComponent } from '../components/button-edit/button-edit.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TableComponent } from '../components/table/table.component';
     LoginComponent,
     CatalogoComponent,
     MeusLivrosComponent,
-    TableComponent
+    TableComponent,
+    ButtonEditComponent
   ],
   imports: [
     BrowserModule,

@@ -8,5 +8,5 @@ import { IBook } from 'src/interfaces';
 })
 export class TableComponent {
   @Input() books! : IBook;
-
+  @Input() page : number = 0;
 }

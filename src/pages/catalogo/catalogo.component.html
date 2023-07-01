@@ -1,4 +1,9 @@
 <section class="catalogoContainer">
     <app-page-title>Livros com mais popularidade.</app-page-title>
-    <app-table [books]="books"></app-table>
+    <app-table [books]="books" [page]="page"></app-table>
+    <div class="containerBtns">
+        <app-button-edit (onClick)="previousPage()">ANTERIOR</app-button-edit>
+        <app-button-edit (onClick)="nextPage()">PRÓXIMO</app-button-edit>
+    </div>
+    <p *ngIf="error !== ''" class="errorMsg">{{error}}</p>
 </section>

@@ -1,0 +1,15 @@
+.editBtn {
+    background-color: #272727;
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: none;
+    max-width: 219px;
+    padding: 9px 34px;
+    cursor: pointer;
+    margin: 0 18px;
+
+    &:hover {
+        background-color: #414141;
+    }
+}

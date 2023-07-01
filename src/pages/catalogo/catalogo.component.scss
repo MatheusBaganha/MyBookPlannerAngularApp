@@ -1,5 +1,16 @@
-.catalogoContainer {
+.catalogoContainer, .containerBtns, .errorMsg {
     display: block;
     margin: 0 auto ;
     width: max-content;
+}
+
+.containerBtns {
+   margin-top: 64px;
+}
+
+.errorMsg {
+    margin: 32px auto;
+    color: #ff6666;
+    font-weight: 600;
+    font-size: 1.5rem;
 }
