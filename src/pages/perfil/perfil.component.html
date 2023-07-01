@@ -1,0 +1,36 @@
+<section class="containerPerfil">
+    <div class="containerInfoUsuario">
+        <app-page-title>{{userData.username}}</app-page-title>
+        <app-paragraph [isLargeWidth]="true">{{userData.biography}}</app-paragraph>
+    </div>
+
+    <div class="containerEstatisticas"> 
+        <div *ngIf="userStatistics">
+            <app-page-title [isSmallFont]="true">Estatísticas dos Livros.</app-page-title>
+            <ul>
+                <li><span class="status desejoLer">Desejo Ler</span><span>{{userStatistics.wishToRead}}</span></li>
+                <li><span class="status lendo">Lendo</span><span>{{userStatistics.reading}}</span></li>
+                <li><span class="status lido">Lido</span><span>{{userStatistics.readed}}</span></li>
+            </ul>
+        </div>
+        <div *ngIf="bestBook">
+            <app-page-title [isSmallFont]="true">Seu Livro com maior nota.</app-page-title>
+            <div class="containerBestBook">
+                <div class="containerImg">
+                    <img src={{bestBook.imageUrl}}/>
+                </div>
+                <div class="containerBookInfo">
+                    <span class="livro">{{bestBook.title}} - {{bestBook.author}}</span>
+                    <div class="containerYearAndScore">
+                        <span>{{bestBook.releaseYear}}</span>
+                        <span class="nota">{{bestBook.userScore}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="containerBtns">
+    <app-button-edit [isDarker]="true" [isBtnBigger]="true" (onClick)="logout()">SAIR DA CONTA</app-button-edit>
+    <app-button-edit [isBtnBigger]="true" (onClick)="deleteAccount()">DELETAR CONTA</app-button-edit>
+</div>

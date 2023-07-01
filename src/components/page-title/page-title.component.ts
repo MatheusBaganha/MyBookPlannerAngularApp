@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 export class PageTitleComponent {
   @Input() isCentered: boolean = false;
   @Input() hasDetail: boolean = true;
+  @Input() isSmallFont: boolean = false;
 }

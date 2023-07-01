@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import jwtDecode from 'jwt-decode';
+import { ITokenData } from 'src/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import jwtDecode from 'jwt-decode';
 
 export class TokenService {
   private token: string = '';
-  private tokenDecoded : any;
+  private tokenDecoded! : ITokenData;
 
   constructor() { }
 

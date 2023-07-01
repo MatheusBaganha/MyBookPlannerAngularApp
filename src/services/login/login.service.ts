@@ -28,4 +28,8 @@ export class LoginService {
 
     return this.http.post<any>(this.urlAPI + `user/register`, body, this.httpOptions)
   }
+
+  deleteUser(idUser: number) : Observable<any> {
+    return this.http.delete<any>(this.urlAPI + `user/${idUser}`);
+  }
 }

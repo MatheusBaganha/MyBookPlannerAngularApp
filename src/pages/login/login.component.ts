@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { UserLogin, UserRegister } from 'src/interfaces';
 import { LoginService } from 'src/services/login/login.service';
 import { TokenService } from 'src/services/login/token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent {
   password: string = '';
 
   error : string = '';
-  constructor(private loginService : LoginService, private tokenService : TokenService) {
+  constructor(private loginService : LoginService, private tokenService : TokenService, private router: Router) {
 
   }
 
@@ -53,6 +54,8 @@ export class LoginComponent {
       next: (token) => {
           this.tokenService.setToken(token.usertoken);
           console.log(this.email, this.password)
+
+          this.router.navigate(['/perfil']);
       },
       error: (error: HttpErrorResponse) => {
         this.error = "Usuário ou senha inválidos.";
@@ -90,6 +93,7 @@ export class LoginComponent {
               this.tokenService.setToken(token.usertoken);
               console.log(token);
               console.log(this.email, this.password)
+              this.router.navigate(['/perfil']);
           }});
       },
       error: (error: HttpErrorResponse) => {

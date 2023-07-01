@@ -1,1 +1,1 @@
-<button class="editBtn" (click)="handleClick()"><ng-content></ng-content></button>
+<button class="editBtn" (click)="handleClick()" [ngClass]="{'biggerWidth' : isBtnBigger, 'isDarker' : isDarker}"><ng-content></ng-content></button>

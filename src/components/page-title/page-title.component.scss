@@ -28,3 +28,11 @@
         left: 40%;
     }
 }
+
+.smallFontSize {
+    font-size: 2rem;
+
+    &::after {
+        top: 54px;
+    }
+}

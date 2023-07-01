@@ -13,3 +13,15 @@
         background-color: #414141;
     }
 }
+
+.biggerWidth {
+    max-width: 264px;
+}
+
+.isDarker {
+    background-color: #1E1C1C;
+
+    &:hover {
+        background-color: #141212;
+    }
+}

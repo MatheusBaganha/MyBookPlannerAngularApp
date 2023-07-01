@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ParagraphComponent {
   @Input() isCentered: boolean = false;
+  @Input() isLargeWidth: boolean = false;
 }

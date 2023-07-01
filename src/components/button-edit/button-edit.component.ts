@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button-edit',
@@ -6,6 +6,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./button-edit.component.scss']
 })
 export class ButtonEditComponent {
+  @Input() isDarker: boolean = false;
+  @Input() isBtnBigger: boolean = false;
+
   @Output() onClick : EventEmitter<any> = new EventEmitter();
 
   handleClick() {

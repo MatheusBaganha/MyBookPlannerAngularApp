@@ -17,6 +17,7 @@ import { CatalogoComponent } from '../pages/catalogo/catalogo.component';
 import { MeusLivrosComponent } from '../pages/meus-livros/meus-livros.component';
 import { TableComponent } from '../components/table/table.component';
 import { ButtonEditComponent } from '../components/button-edit/button-edit.component';
+import { PerfilComponent } from '../pages/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ButtonEditComponent } from '../components/button-edit/button-edit.compo
     CatalogoComponent,
     MeusLivrosComponent,
     TableComponent,
-    ButtonEditComponent
+    ButtonEditComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
