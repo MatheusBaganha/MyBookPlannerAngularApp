@@ -27,9 +27,6 @@ export class LoginComponent implements OnInit {
   }
 
   handleChangeLogin() {
-    this.email = '';
-    this.username = '';
-    this.password = '';
     this.isLogin = !this.isLogin;
   }
 

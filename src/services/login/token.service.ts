@@ -14,7 +14,9 @@ export class TokenService {
 
   setToken(token: string) {
     this.token = token;
-    this.tokenDecoded = jwtDecode(this.token);
+    if(token !== '') {
+      this.tokenDecoded = jwtDecode(this.token);
+    }
   }
 
   getToken(): string {
