@@ -4,7 +4,8 @@
         <ul class="navItems">
             <li><a routerLink="/catalogo">Catálogo</a></li>
             <li><a routerLink="/meusLivros">Meus Livros</a></li>
-            <li><a routerLink="/login">Login</a></li>
+            <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
+            <li *ngIf="isLoggedIn"><a routerLink="/perfil">Perfil</a></li>
         </ul>
     </nav>
 </header>

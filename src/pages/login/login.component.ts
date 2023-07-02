@@ -1,16 +1,17 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserLogin, UserRegister } from 'src/interfaces';
 import { LoginService } from 'src/services/login/login.service';
 import { TokenService } from 'src/services/login/token.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/services/login/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   isLogin : boolean = true;
 
   username: string = '';
@@ -18,8 +19,11 @@ export class LoginComponent {
   password: string = '';
 
   error : string = '';
-  constructor(private loginService : LoginService, private tokenService : TokenService, private router: Router) {
 
+  constructor(private loginService : LoginService, private tokenService : TokenService, private router: Router, private authService: AuthService) { }
+
+  
+  ngOnInit() {
   }
 
   handleChangeLogin() {
@@ -54,7 +58,7 @@ export class LoginComponent {
       next: (token) => {
           this.tokenService.setToken(token.usertoken);
           console.log(this.email, this.password)
-
+          this.authService.login();
           this.router.navigate(['/perfil']);
       },
       error: (error: HttpErrorResponse) => {
