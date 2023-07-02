@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ITokenData, UserBestBook, UserBooksStatistics } from 'src/interfaces';
 import { AuthService } from 'src/services/login/auth.service';
+import { LoginService } from 'src/services/login/login.service';
 import { TokenService } from 'src/services/login/token.service';
 import { userBooksService } from 'src/services/userBooks/userBooks.service';
 
@@ -12,7 +13,7 @@ import { userBooksService } from 'src/services/userBooks/userBooks.service';
 })
 export class PerfilComponent {
 
-  constructor(private tokenService : TokenService, private authService : AuthService,private userBooksService : userBooksService,  private router: Router) {}
+  constructor(private tokenService : TokenService, private authService : AuthService,private userBooksService : userBooksService,  private router: Router, private loginService : LoginService) {}
 
   userData : ITokenData | null = this.tokenService.getTokenDecoded();
   bestBook! : UserBestBook | null;
@@ -30,7 +31,9 @@ export class PerfilComponent {
   }
 
   deleteAccount() {
-
+    this.loginService.deleteUser(this.tokenService.getTokenDecoded().unique_name).subscribe(next => {
+      this.logout();
+    })
   }
 
   ngOnInit() {

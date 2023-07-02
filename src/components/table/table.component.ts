@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IBook } from 'src/interfaces';
+import { IBook, IUserBooks } from 'src/interfaces';
 
 @Component({
   selector: 'app-table',
@@ -7,6 +7,7 @@ import { IBook } from 'src/interfaces';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent {
-  @Input() books! : IBook;
+  @Input() books! : IBook | null;
+  @Input() userBooks! : IUserBooks | null;
   @Input() page : number = 0;
 }

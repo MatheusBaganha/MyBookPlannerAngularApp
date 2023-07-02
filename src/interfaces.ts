@@ -58,3 +58,13 @@ export interface UserBestBook {
     imageUrl: string;
     userScore: number;
 }
+
+export interface UserBooks extends UserBestBook {
+    readingStatus: string;
+    score: number;
+}
+
+export interface IUserBooks {
+    data: UserBooks[],
+    errors: string[] | string
+}

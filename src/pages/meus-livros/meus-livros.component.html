@@ -1,1 +1,9 @@
-<p>meus-livros works!</p>
+<section class="container">
+    <app-page-title>Seus livros.</app-page-title>
+    <div class="containerBtns">
+        <app-button [isBlack]="!active.wishToRead" (onClick)="getWishToReadBooks()">DESEJO</app-button>
+        <app-button [isBlack]="!active.reading" (onClick)="getReadingBooks()">LENDO</app-button>
+        <app-button [isBlack]="!active.readed" (onClick)="getReadedBooks()">LIDOS</app-button>
+    </div>
+    <app-table [userBooks]="books"></app-table>
+</section>

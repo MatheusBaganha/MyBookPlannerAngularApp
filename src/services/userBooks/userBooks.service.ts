@@ -3,7 +3,7 @@ import {  Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
 import { TokenService } from '../login/token.service';
-import { IUserBestBook, IUserBooksStatistics } from 'src/interfaces';
+import { IUserBestBook, IUserBooks, IUserBooksStatistics } from 'src/interfaces';
 
 
 @Injectable({
@@ -14,7 +14,28 @@ export class userBooksService {
 
   constructor(private http : HttpClient, private tokenService : TokenService) { }
 
-  
+  getWishToReadBooks(userId: number) : Observable<IUserBooks> {
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json', 'Authorization': `Bearer ${this.tokenService.getToken()}`})
+    }
+    return this.http.get<IUserBooks>(this.urlAPI + `user-book/${userId}/wish-to-read`, httpOptions)
+  }
+
+  getReadingBooks(userId: number) : Observable<IUserBooks> {
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json', 'Authorization': `Bearer ${this.tokenService.getToken()}`})
+    }
+    return this.http.get<IUserBooks>(this.urlAPI + `user-book/${userId}/reading`, httpOptions)
+  }
+
+
+  getReadedBooks(userId: number) : Observable<IUserBooks> {
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json', 'Authorization': `Bearer ${this.tokenService.getToken()}`})
+    }
+    return this.http.get<IUserBooks>(this.urlAPI + `user-book/${userId}/readed`, httpOptions)
+  }
+
 
   getUserStatistics(userId : number) : Observable<IUserBooksStatistics> {
     const httpOptions = {
@@ -28,5 +49,5 @@ export class userBooksService {
         headers: new HttpHeaders({'Content-Type': 'application/json', 'Authorization': `Bearer ${this.tokenService.getToken()}`})
       }
     return this.http.get<IUserBestBook>(this.urlAPI + `user-book/${userId}/best-book`, httpOptions)
-}
+  }
 }

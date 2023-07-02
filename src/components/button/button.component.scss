@@ -19,3 +19,12 @@
         background-color: #4ed0d2;
     }
 }
+
+.isBlack {
+    background-color: #1E1C1C;
+    box-shadow: 0 4px 4px rgba(33, 33, 33, 0.294);
+
+    &:hover {
+        background-color: #32a4a5;
+    }
+}

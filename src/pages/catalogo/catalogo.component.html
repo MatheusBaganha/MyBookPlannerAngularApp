@@ -1,6 +1,6 @@
 <section class="catalogoContainer">
     <app-page-title>Livros com mais popularidade.</app-page-title>
-    <app-table [books]="books" [page]="page"></app-table>
+    <app-table [books]="books!" [userBooks]="null" [page]="page"></app-table>
     <div class="containerBtns">
         <app-button-edit (onClick)="previousPage()">ANTERIOR</app-button-edit>
         <app-button-edit (onClick)="nextPage()">PRÓXIMO</app-button-edit>

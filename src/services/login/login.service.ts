@@ -4,6 +4,7 @@ import {  Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
 import { IToken, UserLogin, UserRegister } from 'src/interfaces';
+import { TokenService } from './token.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { IToken, UserLogin, UserRegister } from 'src/interfaces';
 export class LoginService {
   private urlAPI = 'https://localhost:7186/';
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient, private tokenService : TokenService) { }
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -30,6 +31,9 @@ export class LoginService {
   }
 
   deleteUser(idUser: number) : Observable<any> {
-    return this.http.delete<any>(this.urlAPI + `user/${idUser}`);
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json', 'Authorization': `Bearer ${this.tokenService.getToken()}`})
+    }
+    return this.http.delete<any>(this.urlAPI + `user/${idUser}`, httpOptions);
   }
 }

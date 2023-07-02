@@ -12,7 +12,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class CatalogoComponent {
   constructor(private bookService: BooksService) {
   }
-  books! : IBook;
+  books! : IBook | null;
   page : number = 0;
   error : string = '';
   

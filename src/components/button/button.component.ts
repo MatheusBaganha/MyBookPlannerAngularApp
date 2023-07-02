@@ -7,6 +7,7 @@ import { Component, Output, Input, EventEmitter } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() hasEvent = true;
+  @Input() isBlack = false;
   @Output() onClick: EventEmitter<any> = new EventEmitter();
 
   handleClick() {

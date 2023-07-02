@@ -6,7 +6,7 @@
         <th class="tableHead">SUA NOTA</th>
         <th class="tableHead">STATUS</th>
     </tr>
-    <ng-container *ngIf="books && books.data.length">
+    <ng-container *ngIf="userBooks === null && books && books.data.length">
         <tr class="tableRow" *ngFor="let book of books.data let i = index">
             <td class="tableData rank">{{(page * 10) + i + 1}}</td>
             <td class="tableData tableDataImage">
@@ -19,7 +19,24 @@
                 </div>
             </td>
             <td class="tableData nota">{{book.score}}</td>
-            <td class="tableData nota">N/A</td>
+            <td class="tableData edit"><app-button-edit>ADD</app-button-edit></td>
+        </tr>  
+    </ng-container>
+
+    <ng-container *ngIf="books === null && userBooks && userBooks.data.length">
+        <tr class="tableRow" *ngFor="let userBook of userBooks.data let i = index">
+            <td class="tableData rank">{{ i + 1}}</td>
+            <td class="tableData tableDataImage">
+                <div class="containerImg">
+                    <img src="{{userBook.imageUrl}}"/>
+                </div>
+                <div class="containerBookInfo">
+                    <span class="livro">{{userBook.title}} - {{userBook.author}}</span>
+                    <span>{{userBook.releaseYear}}</span>
+                </div>
+            </td>
+            <td class="tableData nota">{{userBook.score}}</td>
+            <td class="tableData nota">{{userBook.userScore}}</td>
             <td class="tableData edit"><app-button-edit>EDIT</app-button-edit></td>
         </tr>  
     </ng-container>
