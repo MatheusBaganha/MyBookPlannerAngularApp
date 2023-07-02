@@ -3,7 +3,7 @@
         <th class="tableHead">RANK</th>
         <th class="tableHead">LIVRO</th>
         <th class="tableHead">NOTA</th>
-        <th class="tableHead">SUA NOTA</th>
+        <th class="tableHead" *ngIf="books === null && userBooks && userBooks.length">SUA NOTA</th>
         <th class="tableHead">STATUS</th>
     </tr>
     <ng-container *ngIf="userBooks === null && books && books.data.length">
@@ -23,8 +23,8 @@
         </tr>  
     </ng-container>
 
-    <ng-container *ngIf="books === null && userBooks && userBooks.data.length">
-        <tr class="tableRow" *ngFor="let userBook of userBooks.data let i = index">
+    <ng-container *ngIf="books === null && userBooks && userBooks.length">
+        <tr class="tableRow" *ngFor="let userBook of userBooks let i = index">
             <td class="tableData rank">{{ i + 1}}</td>
             <td class="tableData tableDataImage">
                 <div class="containerImg">

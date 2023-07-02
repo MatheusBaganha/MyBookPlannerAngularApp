@@ -3,7 +3,7 @@
         <a routerLink="/"><h1 class="logo">MyBookPlanner</h1></a>
         <ul class="navItems">
             <li><a routerLink="/catalogo">Catálogo</a></li>
-            <li><a routerLink="/meusLivros">Meus Livros</a></li>
+            <li *ngIf="isLoggedIn"><a routerLink="/meusLivros">Meus Livros</a></li>
             <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
             <li *ngIf="isLoggedIn"><a routerLink="/perfil">Perfil</a></li>
         </ul>

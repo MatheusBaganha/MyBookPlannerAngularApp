@@ -18,14 +18,14 @@ export class userBooksService {
     const httpOptions = {
       headers: new HttpHeaders({'Content-Type': 'application/json', 'Authorization': `Bearer ${this.tokenService.getToken()}`})
     }
-    return this.http.get<IUserBooks>(this.urlAPI + `user-book/${userId}/wish-to-read`, httpOptions)
+    return this.http.get<IUserBooks>(this.urlAPI + `user-book/wish-to-read/${userId}`, httpOptions)
   }
 
   getReadingBooks(userId: number) : Observable<IUserBooks> {
     const httpOptions = {
       headers: new HttpHeaders({'Content-Type': 'application/json', 'Authorization': `Bearer ${this.tokenService.getToken()}`})
     }
-    return this.http.get<IUserBooks>(this.urlAPI + `user-book/${userId}/reading`, httpOptions)
+    return this.http.get<IUserBooks>(this.urlAPI + `user-book/reading/${userId}`, httpOptions)
   }
 
 
@@ -33,7 +33,7 @@ export class userBooksService {
     const httpOptions = {
       headers: new HttpHeaders({'Content-Type': 'application/json', 'Authorization': `Bearer ${this.tokenService.getToken()}`})
     }
-    return this.http.get<IUserBooks>(this.urlAPI + `user-book/${userId}/readed`, httpOptions)
+    return this.http.get<IUserBooks>(this.urlAPI + `user-book/readed/${userId}`, httpOptions)
   }
 
 

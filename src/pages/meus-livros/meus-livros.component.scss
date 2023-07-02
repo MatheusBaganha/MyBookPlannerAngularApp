@@ -1,5 +1,7 @@
 .container {
-    margin-left: 64px;
+    display: block;
+    margin: 0 auto ;
+    width: max-content;
 }
 
 .containerBtns {
@@ -8,4 +10,13 @@
     align-items: center;
     gap: 0 32px;
     margin-top: 64px;
+}
+
+.errorMsg {
+    display: block;
+    max-width: max-content;
+    margin: 32px auto;
+    color: #ff6666;
+    font-weight: 600;
+    font-size: 1.5rem;
 }

@@ -5,5 +5,6 @@
         <app-button [isBlack]="!active.reading" (onClick)="getReadingBooks()">LENDO</app-button>
         <app-button [isBlack]="!active.readed" (onClick)="getReadedBooks()">LIDOS</app-button>
     </div>
-    <app-table [userBooks]="books"></app-table>
+    <app-table *ngIf="error === ''" [userBooks]="books" [books]="null"></app-table>
+    <span *ngIf="error" class="errorMsg">{{error}}</span>    
 </section>
