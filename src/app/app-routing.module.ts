@@ -7,11 +7,11 @@ import { MeusLivrosComponent } from 'src/pages/meus-livros/meus-livros.component
 import { PerfilComponent } from 'src/pages/perfil/perfil.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'catalogo', component: CatalogoComponent},
-  {path: 'meusLivros', component: MeusLivrosComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'perfil', component: PerfilComponent}
+  {path: '', component: HomeComponent, title: "MyBookPlanner"},
+  {path: 'catalogo', component: CatalogoComponent, title: "MyBookPlanner - Catálogo"},
+  {path: 'meusLivros', component: MeusLivrosComponent,  title: "MyBookPlanner - Meus Livros"},
+  {path: 'login', component: LoginComponent,  title: "MyBookPlanner - Login"},
+  {path: 'perfil', component: PerfilComponent,  title: "MyBookPlanner - Perfil"}
 ];
 
 @NgModule({
