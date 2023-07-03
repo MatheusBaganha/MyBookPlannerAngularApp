@@ -64,3 +64,139 @@
     font-size: 3.25rem;
 }
 
+.modal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0, .20);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    .modalContent {
+        padding: 42px 32px;
+        width: 800px;
+        height: 500px;
+        background-color: #1D1B1B;
+        border-radius: 5px;
+        box-shadow: 0 6px 6px rgba(0,0,0, .20);
+        border: 1px solid #191919
+    }
+}
+
+.containerForm {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 92px;
+    gap: 128px;
+    
+
+    .containerInputs, .containerBtns  {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .containerBtns {
+        gap: 0;
+    }
+
+    label, input {
+        display: block;
+    }
+
+    label {
+        color: #8F8F8F;
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+    
+    input, select {
+        height: 32px;
+        font-size: 1.1rem;
+        padding-left: 8px;
+        border-radius: 3px;
+        background-color: #eeeeee;
+        border: none;
+    }
+
+    input {
+        width: 200px;
+        margin-bottom: 28px;
+    }
+
+    select {
+        width: 210px;
+        margin-bottom: 6px;
+        cursor: pointer;
+    }
+
+}
+
+
+.modalContent {
+    position: relative;
+
+    .errorMsg {
+        display: block;
+        text-align: center;
+        width: max-content;
+        align-self: center;
+        margin: 28px auto;
+        color: #ff6666;
+        font-weight: 600;
+        font-size: 1.4rem;
+    }
+    
+    .containerImgInModal {
+        max-width: 150px;
+    
+        img {
+            border-radius: 5px;
+            box-shadow: 0 6px 6px rgba(0,0,0, .20);
+        }
+    }
+    
+    .containerLivroDetalhes {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        .bookInfo {
+            margin-top: 18px;
+        }
+    }
+    
+    .btnFechar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        padding: 8px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 1.5rem;
+        background-color: #191919;
+        border: 1px solid #8F8F8F;
+        color: #ffffff;
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #ff6666;
+            border: 1px solid #600d0d;
+        }
+    }
+}
+

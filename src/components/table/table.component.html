@@ -4,9 +4,9 @@
         <th class="tableHead">LIVRO</th>
         <th class="tableHead">NOTA</th>
         <th class="tableHead" *ngIf="books === null && userBooks && userBooks.length">SUA NOTA</th>
-        <th class="tableHead">STATUS</th>
+        <th class="tableHead" *ngIf="isLoggedIn">STATUS</th>
     </tr>
-    <ng-container *ngIf="userBooks === null && books && books.data.length">
+    <ng-container *ngIf="userBooks === null && books && books.data.length"> 
         <tr class="tableRow" *ngFor="let book of books.data let i = index">
             <td class="tableData rank">{{(page * 10) + i + 1}}</td>
             <td class="tableData tableDataImage">
@@ -19,7 +19,39 @@
                 </div>
             </td>
             <td class="tableData nota">{{book.score}}</td>
-            <td class="tableData edit"><app-button-edit>ADD</app-button-edit></td>
+            <td class="tableData edit" *ngIf="isLoggedIn"><app-button-edit (onClick)="openModal(book.id)">ADD</app-button-edit></td>
+            <div *ngIf="modalIsActive" class="modal">
+                <div class="modalContent">
+                    <span class="btnFechar" (click)="closeModal()">X</span>
+                    <app-page-title [isCentered]="true">ADICIONE O LIVRO EM SUA CONTA.</app-page-title>
+                    
+                    <form class="containerForm">
+                        <div class="containerInputs">
+                            <label for="userScore">Sua nota: </label>
+                            <input type="number" min="0" max="10" id="userScore">
+            
+                            <label for="status">Status de leitura: </label>
+                            <select name="status" id="status">
+                                <option value="Selecione" disabled selected>Selecione</option>
+                                <option value="Desejo">Desejo</option>
+                                <option value="Lendo">Lendo</option>
+                                <option value="Lido">Lido</option>
+                            </select>
+                            <app-button [isSmall]="true">ADICIONAR</app-button>
+                         </div>
+                         <div class="containerLivroDetalhes">
+                            <div class="containerImgInModal">
+                                <img src="{{bookInModal?.imageUrl}}" alt="imagem do livro">
+                            </div>
+                            <div class="bookInfo">
+                                <h3>{{bookInModal?.title}}</h3>
+                                <cite>{{bookInModal?.author}}</cite>
+                            </div>
+                         </div>
+                    </form>
+                    <span *ngIf="error" class="errorMsg">Você já tem esse livro em sua conta.</span>
+                </div>
+            </div>
         </tr>  
     </ng-container>
 
@@ -37,7 +69,42 @@
             </td>
             <td class="tableData nota">{{userBook.score}}</td>
             <td class="tableData nota">{{userBook.userScore}}</td>
-            <td class="tableData edit"><app-button-edit>EDIT</app-button-edit></td>
+            <td class="tableData edit"><app-button-edit (onClick)="openModal(userBook.idBook)">EDIT</app-button-edit></td>
+            <div *ngIf="modalIsActive" class="modal">
+                <div class="modalContent">
+                    <span class="btnFechar" (click)="closeModal()">X</span>
+                    <app-page-title [isCentered]="true">ATUALIZE O SEU LIVRO.</app-page-title>
+                    
+                    <form class="containerForm">
+                        <div class="containerInputs">
+                            <label for="userScore">Sua nota: </label>
+                            <input type="number" min="0" max="10" id="userScore">
+            
+                            <label for="status">Status de leitura: </label>
+                            <select name="status" id="status">
+                                <option value="Selecione" disabled selected>Selecione</option>
+                                <option value="Desejo">Desejo</option>
+                                <option value="Lendo">Lendo</option>
+                                <option value="Lido">Lido</option>
+                            </select>
+                            <div class="containerBtns">
+                                <app-button [isSmall]="true">ATUALIZAR</app-button>
+                                <app-button [isSmall]="true" [isGray]="true">DELETAR</app-button>
+                            </div>
+                         </div>
+                         <div class="containerLivroDetalhes">
+                            <div class="containerImgInModal">
+                                <img src="{{bookInModal?.imageUrl}}" alt="imagem do livro">
+                            </div>
+                            <div class="bookInfo">
+                                <h3>{{bookInModal?.title}}</h3>
+                                <cite>{{bookInModal?.author}}</cite>
+                            </div>
+                         </div>
+                    </form>
+                    <span *ngIf="error" class="errorMsg">Erro ao atualizar.</span>
+                </div>
+            </div>
         </tr>  
     </ng-container>
 </table>

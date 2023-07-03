@@ -3,6 +3,11 @@ export interface IBook {
     errors: string[] | string
 }
 
+export interface IOneBook {
+    data: Book,
+    error: string[] | string;
+}
+
 export interface Book {
     id: number;
     title: string;
