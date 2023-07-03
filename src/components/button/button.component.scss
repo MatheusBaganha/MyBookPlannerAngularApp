@@ -23,7 +23,9 @@
 .isBlack {
     background-color: #1E1C1C;
     box-shadow: 0 4px 4px rgba(33, 33, 33, 0.294);
+}
 
+.hasRedHover {
     &:hover {
         background-color: #ff6666;
     }

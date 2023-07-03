@@ -28,16 +28,16 @@
                     <form class="containerForm">
                         <div class="containerInputs">
                             <label for="userScore">Sua nota: </label>
-                            <input type="number" min="0" max="10" id="userScore">
+                            <input type="number" min="0" max="10" id="userScore" name="userScore" [(ngModel)]="userScore">
             
-                            <label for="status">Status de leitura: </label>
-                            <select name="status" id="status">
+                            <label for="readingStatus">Status de leitura: </label>
+                            <select name="readingStatus" id="readingStatus" [(ngModel)]="readingStatus">
                                 <option value="Selecione" disabled selected>Selecione</option>
                                 <option value="Desejo">Desejo</option>
                                 <option value="Lendo">Lendo</option>
                                 <option value="Lido">Lido</option>
                             </select>
-                            <app-button [isSmall]="true">ADICIONAR</app-button>
+                            <app-button [isSmall]="true" (onClick)="addBook()">ADICIONAR</app-button>
                          </div>
                          <div class="containerLivroDetalhes">
                             <div class="containerImgInModal">
@@ -49,7 +49,8 @@
                             </div>
                          </div>
                     </form>
-                    <span *ngIf="error" class="errorMsg">Você já tem esse livro em sua conta.</span>
+                    <span *ngIf="sucessfulRequest" class="errorMsg successMsg">{{sucessfulRequest}}</span>
+                    <span *ngIf="error" class="errorMsg">{{error}}</span>
                 </div>
             </div>
         </tr>  
@@ -78,18 +79,18 @@
                     <form class="containerForm">
                         <div class="containerInputs">
                             <label for="userScore">Sua nota: </label>
-                            <input type="number" min="0" max="10" id="userScore">
+                            <input type="number" min="0" max="10" id="userScore" name="userScore" [(ngModel)]="userScore">
             
-                            <label for="status">Status de leitura: </label>
-                            <select name="status" id="status">
+                            <label for="readingStatus">Status de leitura: </label>
+                            <select name="readingStatus" id="readingStatus" [(ngModel)]="readingStatus">
                                 <option value="Selecione" disabled selected>Selecione</option>
                                 <option value="Desejo">Desejo</option>
                                 <option value="Lendo">Lendo</option>
                                 <option value="Lido">Lido</option>
                             </select>
                             <div class="containerBtns">
-                                <app-button [isSmall]="true">ATUALIZAR</app-button>
-                                <app-button [isSmall]="true" [isGray]="true">DELETAR</app-button>
+                                <app-button [isSmall]="true" (onClick)="updateBook()">ATUALIZAR</app-button>
+                                <app-button [isSmall]="true" [isGray]="true" (onClick)="deleteBook(userBook.idBook)">DELETAR</app-button>
                             </div>
                          </div>
                          <div class="containerLivroDetalhes">
@@ -102,7 +103,8 @@
                             </div>
                          </div>
                     </form>
-                    <span *ngIf="error" class="errorMsg">Erro ao atualizar.</span>
+                    <span *ngIf="sucessfulRequest" class="errorMsg successMsg">{{sucessfulRequest}}</span>
+                    <span *ngIf="error" class="errorMsg">{{error}}</span>
                 </div>
             </div>
         </tr>  

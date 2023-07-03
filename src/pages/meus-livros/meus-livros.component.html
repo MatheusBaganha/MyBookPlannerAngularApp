@@ -1,9 +1,9 @@
 <section class="container">
     <app-page-title>Seus livros.</app-page-title>
     <div class="containerBtns">
-        <app-button [isBlack]="!active.wishToRead" (onClick)="getWishToReadBooks()">DESEJO</app-button>
-        <app-button [isBlack]="!active.reading" (onClick)="getReadingBooks()">LENDO</app-button>
-        <app-button [isBlack]="!active.readed" (onClick)="getReadedBooks()">LIDOS</app-button>
+        <app-button [isBlack]="!active.wishToRead" [hasRedHover]="false" (onClick)="getWishToReadBooks()">DESEJO</app-button>
+        <app-button [isBlack]="!active.reading" [hasRedHover]="false" (onClick)="getReadingBooks()">LENDO</app-button>
+        <app-button [isBlack]="!active.readed"  [hasRedHover]="false" (onClick)="getReadedBooks()">LIDOS</app-button>
     </div>
     <app-table *ngIf="error === ''" [userBooks]="books" [books]="null"></app-table>
     <span *ngIf="error" class="errorMsg">{{error}}</span>    

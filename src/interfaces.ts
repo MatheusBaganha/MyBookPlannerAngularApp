@@ -73,3 +73,10 @@ export interface IUserBooks {
     data: UserBooks[],
     errors: string[] | string
 }
+
+export interface IEditBook {
+    idBook: number;
+    idUser?: number;
+    userScore: number;
+    readingStatus: string;
+}

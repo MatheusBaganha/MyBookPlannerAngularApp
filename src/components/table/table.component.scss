@@ -79,7 +79,7 @@
     .modalContent {
         padding: 42px 32px;
         width: 800px;
-        height: 500px;
+        height: 520px;
         background-color: #1D1B1B;
         border-radius: 5px;
         box-shadow: 0 6px 6px rgba(0,0,0, .20);
@@ -153,6 +153,10 @@
         color: #ff6666;
         font-weight: 600;
         font-size: 1.4rem;
+    }
+
+    .successMsg {
+        color: #66ff69;
     }
     
     .containerImgInModal {

@@ -3,7 +3,7 @@ import {  Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
 import { TokenService } from '../login/token.service';
-import { IUserBestBook, IUserBooks, IUserBooksStatistics } from 'src/interfaces';
+import { IEditBook, IUserBestBook, IUserBooks, IUserBooksStatistics } from 'src/interfaces';
 
 
 @Injectable({
@@ -50,4 +50,46 @@ export class userBooksService {
       }
     return this.http.get<IUserBestBook>(this.urlAPI + `user-book/${userId}/best-book`, httpOptions)
   }
+
+
+  addUserBook(book : IEditBook) : Observable<IEditBook> {
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json', 'Authorization': `Bearer ${this.tokenService.getToken()}`})      
+    }
+
+    const body = {
+      idUser: this.tokenService.getTokenDecoded().unique_name,
+      idBook: book.idBook,
+      userScore: book.userScore,
+      readingStatus: book.readingStatus
+    }
+
+      return this.http.post<IEditBook>(this.urlAPI + `user-book/add-book`, body, httpOptions);
+    }
+
+    updateUserBook(book : IEditBook) : Observable<IEditBook> {
+      const httpOptions = {
+        headers: new HttpHeaders({'Content-Type': 'application/json', 'Authorization': `Bearer ${this.tokenService.getToken()}`})      
+      }
+  
+      const body = {
+        idUser: this.tokenService.getTokenDecoded().unique_name,
+        idBook: book.idBook,
+        userScore: book.userScore,
+        readingStatus: book.readingStatus
+      }
+  
+        return this.http.put<IEditBook>(this.urlAPI + `user-book/update-book`, body, httpOptions);
+      }
+
+      
+    deleteUserBook(idBook: number) : Observable<IEditBook> {
+      const httpOptions = {
+        headers: new HttpHeaders({'Content-Type': 'application/json', 'Authorization': `Bearer ${this.tokenService.getToken()}`})      
+      }
+  
+      const idUser = this.tokenService.getTokenDecoded().unique_name;
+  
+        return this.http.delete<IEditBook>(this.urlAPI + `user-book/delete-book/${idUser}/${idBook}`, httpOptions);
+      }
 }

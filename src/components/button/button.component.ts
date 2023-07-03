@@ -10,6 +10,7 @@ export class ButtonComponent {
   @Input() isBlack = false;
   @Input() isGray = false;
   @Input() isSmall = false;
+  @Input() hasRedHover = false;
   @Output() onClick: EventEmitter<any> = new EventEmitter();
 
   handleClick() {
