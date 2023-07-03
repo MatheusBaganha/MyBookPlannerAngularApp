@@ -1,11 +1,11 @@
-<main>
+<main class="animacao">
     <app-page-title [isCentered]="true" [hasDetail]="true">Organize e planeje a sua leitura.</app-page-title>
     <app-paragraph [isCentered]="true">Com o <strong>MyBookPlanner</strong>, você pode organizar com facilidade quais os livros em que você está lendo no momento, bem como qual livro pretende ler e muito mais.</app-paragraph>
     <a *ngIf="!isLoggedIn" routerLink="/login"><app-button [hasEvent]="false">COMEÇAR</app-button></a>
     <a *ngIf="isLoggedIn" routerLink="/meusLivros"><app-button [hasEvent]="false">LIVROS</app-button></a>
 </main>
 
-<section class="aboutUs">
+<section class="aboutUs animacao">
     <app-subtitle [isCentered]="true">SOBRE NÓS</app-subtitle>
     <app-page-title [isCentered]="true" [hasDetail]="false">O que é o MyBookPlanner?</app-page-title>
 

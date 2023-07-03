@@ -29,3 +29,18 @@ a {
 li {
     list-style: none;
 }
+
+@keyframes comeFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-64px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animacao {
+    animation: comeFromTop .6s ease-in forwards;
+}

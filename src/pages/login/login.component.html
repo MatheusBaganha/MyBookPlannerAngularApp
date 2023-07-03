@@ -1,7 +1,7 @@
 <section class="loginContainer">
     <app-page-title *ngIf="isLogin == false">Crie sua conta.</app-page-title>
     <app-page-title *ngIf="isLogin == true">Entre em sua conta.</app-page-title>
-    <div class="formContainer">
+    <div class="formContainer animacao">
         <form class="form">
             <label *ngIf="isLogin == false" for="username">Nome: </label>
             <input *ngIf="isLogin == false" type="text" [(ngModel)]="username" id="username" name="username" required>
@@ -21,7 +21,7 @@
             <span *ngIf="error !== ''" class="errorMsg">{{error}}</span>
         </form>
 
-        <div class="imageContainer">
+        <div class="imageContainer animacao">
             <img src="../../assets/loginSvg.svg" alt="ilustração de entrada">
         </div>
     </div>

@@ -1,10 +1,10 @@
 <section class="containerPerfil">
-    <div class="containerInfoUsuario">
+    <div class="containerInfoUsuario animacao">
         <app-page-title>{{userData?.username}}</app-page-title>
         <app-paragraph [isLargeWidth]="true">{{userData?.biography}}</app-paragraph>
     </div>
 
-    <div class="containerEstatisticas"> 
+    <div class="containerEstatisticas animacao"> 
         <div *ngIf="userStatistics">
             <app-page-title [isSmallFont]="true">Estatísticas dos Livros.</app-page-title>
             <ul>
@@ -13,7 +13,7 @@
                 <li><span class="status lido">Lido</span><span>{{userStatistics.readed}}</span></li>
             </ul>
         </div>
-        <div *ngIf="bestBook">
+        <div *ngIf="bestBook" class="animacao">
             <app-page-title [isSmallFont]="true">Seu Livro com maior nota.</app-page-title>
             <div class="containerBestBook">
                 <div class="containerImg">
