@@ -54,6 +54,7 @@ export class LoginComponent implements OnInit {
     this.loginService.getToken(userLogin).subscribe({
       next: (token) => {
           this.tokenService.setToken(token.usertoken);
+          localStorage.setItem('token', token.usertoken)
           console.log(this.email, this.password)
           this.authService.login();
           this.router.navigate(['/perfil']);
@@ -92,8 +93,8 @@ export class LoginComponent implements OnInit {
         this.loginService.getToken({email: userRegister.email, password: userRegister.password}).subscribe({
           next: (token) => {
               this.tokenService.setToken(token.usertoken);
-              console.log(token);
-              console.log(this.email, this.password)
+              localStorage.setItem('token', token.usertoken);
+              this.authService.login();
               this.router.navigate(['/perfil']);
           }});
       },

@@ -7,7 +7,7 @@ import { ITokenData } from 'src/interfaces';
 })
 
 export class TokenService {
-  private token: string = '';
+  private token: string = localStorage.getItem('token') || '';
   private tokenDecoded! : ITokenData;
 
   constructor() { }

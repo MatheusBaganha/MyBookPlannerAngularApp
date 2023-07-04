@@ -26,6 +26,7 @@ export class PerfilComponent {
       this.userStatistics = null;
       this.errors = '';
       this.tokenService.setToken('');
+      localStorage.removeItem('token')
       this.authService.logout();
       this.router.navigate(['/login']);
   }
