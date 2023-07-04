@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
       this.isUserLogged();
   }
-  
+
   isUserLogged() {
     const tokenStorage = localStorage.getItem('token');
 
@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     } else {
       this.tokenService.setToken(tokenStorage);
       this.authService.login();
-      this.router.navigate(['/perfil']);
+      this.router.navigate(['/meusLivros']);
     }
   }
 }

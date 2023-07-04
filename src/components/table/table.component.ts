@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Book, IBook, IOneBook, UserBooks } from 'src/interfaces';
 import { BooksService } from 'src/services/books/books.service';
 import { AuthService } from 'src/services/login/auth.service';
@@ -24,7 +25,7 @@ export class TableComponent implements OnInit {
   userScore : number | undefined;
   readingStatus : string = 'Selecione';
 
-  constructor(private bookService : BooksService, private userBooksService : userBooksService, private authService : AuthService) {}
+  constructor(private bookService : BooksService, private userBooksService : userBooksService, private authService : AuthService, private router :Router) {}
 
   ngOnInit() {
     this.authService.isLoggedIn$.subscribe(isLoggedIn => {
@@ -95,6 +96,7 @@ export class TableComponent implements OnInit {
       next: () => {
         this.error = ''
         this.sucessfulRequest = "Livro atualizado."
+        location.reload();
       },
       error: () => {
         this.sucessfulRequest = '';
@@ -110,6 +112,7 @@ export class TableComponent implements OnInit {
       next: () => {
         this.error = ''
         this.sucessfulRequest = "Livro apagado."
+        location.reload();
       },
       error: () => {
         this.sucessfulRequest = '';
