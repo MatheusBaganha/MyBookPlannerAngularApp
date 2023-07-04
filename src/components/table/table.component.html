@@ -18,7 +18,7 @@
                     <span>{{book.releaseYear}}</span>
                 </div>
             </td>
-            <td class="tableData nota">{{book.score}}</td>
+            <td class="tableData nota">{{book.score.toFixed(1)}}</td>
             <td class="tableData edit" *ngIf="isLoggedIn"><app-button-edit (onClick)="openModal(book.id)">ADD</app-button-edit></td>
             <div *ngIf="modalIsActive" class="modal">
                 <div class="modalContent">
@@ -68,8 +68,8 @@
                     <span>{{userBook.releaseYear}}</span>
                 </div>
             </td>
-            <td class="tableData nota">{{userBook.score}}</td>
-            <td class="tableData nota">{{userBook.userScore}}</td>
+            <td class="tableData nota">{{userBook.score.toFixed(1)}}</td>
+            <td class="tableData nota">{{userBook.userScore.toFixed(1)}}</td>
             <td class="tableData edit"><app-button-edit (onClick)="openModal(userBook.idBook)">EDIT</app-button-edit></td>
             <div *ngIf="modalIsActive" class="modal">
                 <div class="modalContent">
