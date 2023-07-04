@@ -32,5 +32,14 @@
 </section>
 <div class="containerBtns">
     <app-button-edit [isDarker]="true" [isBtnBigger]="true" (onClick)="logout()">SAIR DA CONTA</app-button-edit>
-    <app-button-edit [isBtnBigger]="true" (onClick)="deleteAccount()">DELETAR CONTA</app-button-edit>
+    <app-button-edit [isBtnBigger]="true" (onClick)="toggleModal()">DELETAR CONTA</app-button-edit>
+</div>
+<div *ngIf="modalIsActive"  class="modal">
+    <div class="modalContent">
+        <app-page-title [isCentered]="true">Você deseja apagar sua conta?</app-page-title>
+        <div class="containerBtns">
+            <app-button (onClick)="toggleModal()">NÃO</app-button>
+            <app-button [hasRedHover]="true" [isGray]="true"  (onClick)="deleteAccount()">DELETAR</app-button>
+        </div>
+    </div>
 </div>

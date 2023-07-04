@@ -1,6 +1,7 @@
 .containerPerfil {
     display: block;
     width: max-content;
+    position: relative;
     
     .containerInfoUsuario {
         margin-left: 64px;
@@ -106,4 +107,28 @@
     justify-content: space-between;
     align-items: center;
     margin: 112px 44px;
+}
+
+.modal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0, .20);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    .modalContent {
+        padding: 42px 32px;
+        width: 800px;
+        height: 520px;
+        background-color: #1D1B1B;
+        border-radius: 5px;
+        box-shadow: 0 6px 6px rgba(0,0,0, .20);
+        border: 1px solid #191919;
+    }
+
 }

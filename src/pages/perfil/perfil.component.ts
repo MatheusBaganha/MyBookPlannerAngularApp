@@ -20,6 +20,8 @@ export class PerfilComponent {
   userStatistics! : UserBooksStatistics | null;
   errors: string = '';
 
+  modalIsActive: boolean = false;
+
   logout() {
       this.userData = null;
       this.bestBook = null;
@@ -29,6 +31,10 @@ export class PerfilComponent {
       localStorage.removeItem('token')
       this.authService.logout();
       this.router.navigate(['/login']);
+  }
+
+  toggleModal() {
+    this.modalIsActive = !this.modalIsActive;
   }
 
   deleteAccount() {
